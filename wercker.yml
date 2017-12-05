@@ -17,6 +17,11 @@ build:
     # http://devcenter.wercker.com/docs/steps/index.html
   steps:
     - script:
-        name: echo
+        name: composer update
         code: |
-          echo "hello world!"
+          php composer.phar update
+    - script:
+        name: phpunit
+        code: |
+          ./vendor/bin/phpunit
+
