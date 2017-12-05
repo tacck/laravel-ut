@@ -1,4 +1,4 @@
-box: php:7.1-apache
+box: suttang/wercker-laravel5
 # You can also use services such as databases. Read more on our dev center:
 # http://devcenter.wercker.com/docs/services/index.html
 # services:
@@ -20,8 +20,10 @@ build:
         name: composer update
         code: |
           php composer.phar update
-    - script:
+
+test:
+    steps:
+     - script:
         name: phpunit
         code: |
           ./vendor/bin/phpunit
-
