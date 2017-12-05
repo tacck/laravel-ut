@@ -25,5 +25,5 @@ test:
     steps:
      - script:
         name: phpunit
-        code: |
+        code: |-
           ./vendor/bin/phpunit
